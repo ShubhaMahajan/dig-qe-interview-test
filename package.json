@@ -1,0 +1,39 @@
+{
+  "name": "nutrien_wiki",
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.2",
+    "@babel/register": "^7.24.6",
+    "@wdio/cli": "^8.39.1",
+    "@wdio/cucumber-framework": "^8.39.0",
+    "@wdio/local-runner": "^8.39.1",
+    "@wdio/spec-reporter": "^8.39.0",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js",
+    "wdio-headless": "wdio run ./wdio.conf.js --headless",
+    "wdio:login": "cross-env FEATURE=login.feature wdio run ./wdio.conf.js",
+    "wdio:basic-auth": "cross-env FEATURE=basic_auth.feature wdio run ./wdio.conf.js",
+    "wdio:checkboxes": "cross-env FEATURE=checkboxes.feature wdio run ./wdio.conf.js",
+    "wdio:dropdown": "cross-env FEATURE=dropdown.feature wdio run ./wdio.conf.js",
+    "wdio:inputs": "cross-env FEATURE=inputs.feature wdio run ./wdio.conf.js",
+    "wdio:index": "cross-env FEATURE=index.feature wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@cucumber/gherkin": "^28.0.0",
+    "@cucumber/messages": "^25.0.1"
+  },
+  "resolutions": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@cucumber/gherkin": "^28.0.0",
+    "@cucumber/messages": "^25.0.1"
+  },
+  "overrides": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@cucumber/gherkin": "^28.0.0",
+    "@cucumber/messages": "^25.0.1"
+  }
+}
