@@ -13,13 +13,7 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js",
-    "wdio-headless": "wdio run ./wdio.conf.js --headless",
-    "wdio:login": "cross-env FEATURE=login.feature wdio run ./wdio.conf.js",
-    "wdio:basic-auth": "cross-env FEATURE=basic_auth.feature wdio run ./wdio.conf.js",
-    "wdio:checkboxes": "cross-env FEATURE=checkboxes.feature wdio run ./wdio.conf.js",
-    "wdio:dropdown": "cross-env FEATURE=dropdown.feature wdio run ./wdio.conf.js",
-    "wdio:inputs": "cross-env FEATURE=inputs.feature wdio run ./wdio.conf.js",
-    "wdio:index": "cross-env FEATURE=index.feature wdio run ./wdio.conf.js"
+    "wdio-headless": "wdio run ./wdio.conf.js --headless"
   },
   "dependencies": {
     "@cucumber/cucumber": "^10.8.0",
