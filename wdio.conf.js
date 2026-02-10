@@ -20,32 +20,7 @@ export const config = {
   // The path of the spec files will be resolved relative from the directory of
   // of the config file unless it's absolute.
   //
-  // Dynamically determine specs based on environment variable or command-line argument
-  // Usage: npm run wdio -- --spec ./features/login.feature
-  // Or: set FEATURE=login.feature && npm run wdio
-  // Or: FEATURE=login.feature npx wdio run wdio.conf.js
-  specs: (() => {
-    const args = process.argv;
-    
-    // Check environment variable first
-    if (process.env.FEATURE) {
-      return [`./features/${process.env.FEATURE}`];
-    }
-    
-    // Check for --spec flag
-    const specIndex = args.findIndex(arg => arg === '--spec');
-    if (specIndex !== -1 && args[specIndex + 1]) {
-      return [args[specIndex + 1]];
-    }
-    
-    // Check for --feature flag
-    const featureIndex = args.findIndex(arg => arg === '--feature');
-    if (featureIndex !== -1 && args[featureIndex + 1]) {
-      return [`./features/${args[featureIndex + 1]}`];
-    }
-    
-    return ["./features/**/*.feature"];
-  })(),
+  specs: ["./features/**/*.feature"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -66,7 +41,7 @@ export const config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 1,
+  maxInstances: 10,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:

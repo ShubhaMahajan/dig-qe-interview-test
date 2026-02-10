@@ -10,21 +10,7 @@ When(
   }
 );
 
- 
 Then(/^I should see a paragraph saying (.+)$/, async (message) => {
-Then(/^I should see a paragraph saying (.+)$/, async (message) => {
-  // Wait a bit for element to be available
-  await browser.pause(1000);
-
-  // Check if element exists and has the text
-  const messageElement = BasicAuthPage.message;
-  const isDisplayed = await messageElement.isDisplayed().catch(() => false);
-  
-  if (isDisplayed) {
-    await expect(messageElement).toHaveTextContaining(message);
-  } else {
-    console.log('Message element not displayed');
-    throw new Error('Message element not found');
-  }
-});
+  await expect(BasicAuthPage.message).toBeExisting();
+  await expect(BasicAuthPage.message).toHaveTextContaining(message);
 });
